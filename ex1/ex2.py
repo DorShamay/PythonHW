@@ -5,7 +5,12 @@
 
 def vars():
     x = int(input("Enter an integer: "))
-    return x
+    if 1 <= x <= 3:
+        pass
+        print('Thanks')
+    else:
+        print('Please enter a valid integer')
+        vars()
 
 def vars1():
     y = str(input("Enter a String"))
@@ -17,15 +22,24 @@ def vars2():
 
 def CompareStr(y,z):
     if len(z) > len(y):
-        print(len(z))
-        print(z)
+        print(z, 'Contains more letters than', y)
+    elif len(y) > len(z):
+        print(y, 'Contains more letters than', z)
     else:
-        print(len(y))
-        print(y)
+        len(y) == len(z)
+        print(y, 'Contains same amount of letters', z)
 
+def CompareStr1(y,z):
+    if y in z:
+        print(y, 'is inside' ,z )
+    elif z in y:
+        print(z, 'is inside' ,y )
+    else:
+        print(z, 'not inside at all', y)
 
 
 x=vars()
 y=vars1()
 z=vars2()
 CompareStr(y,z)
+CompareStr1(y,z)
